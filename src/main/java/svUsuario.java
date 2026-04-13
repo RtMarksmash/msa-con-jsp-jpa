@@ -70,7 +70,7 @@ public class svUsuario extends HttpServlet {
         HttpSession session = request.getSession();
         
         session.setAttribute("listaUsuario", usuarios);
-        response.sendRedirect("listar.jsp");
+        response.sendRedirect("listarUs.jsp");
         processRequest(request, response);
     }
 
