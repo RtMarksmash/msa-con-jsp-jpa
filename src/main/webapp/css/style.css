@@ -7,3 +7,26 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
     Author     : PC
 */
 
+header img {
+    width: 100%;
+    border-style: solid;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+.cuerpo {
+    text-align: center;
+    margin: auto;
+    width: 80%;
+    background-color: aqua;
+    max-width: 900px;
+}
+
+section {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 1fr;
+}
