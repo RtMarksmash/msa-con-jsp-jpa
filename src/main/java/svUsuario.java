@@ -5,11 +5,15 @@
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import logica.Usuario;
 
 /**
  *
@@ -56,6 +60,17 @@ public class svUsuario extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+         List<Usuario> usuarios = new ArrayList();
+        
+        usuarios.add(new Usuario(103,"carlo","hernandez","o",1,"dfc@dsfsd","1234"));
+        usuarios.add(new Usuario(104,"jorge","hernandez","o",1,"dfc@dsfsd","1234"));
+        usuarios.add(new Usuario(105,"luisa","hernandez","o",1,"dfc@dsfsd","1234"));
+        usuarios.add(new Usuario(106,"amy","hernandez","o",1,"dfc@dsfsd","1234"));
+        
+        HttpSession session = request.getSession();
+        
+        session.setAttribute("listaUsuario", usuarios);
+        response.sendRedirect("listar.jsp");
         processRequest(request, response);
     }
 
