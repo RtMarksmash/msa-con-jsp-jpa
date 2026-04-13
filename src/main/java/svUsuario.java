@@ -94,7 +94,7 @@ public class svUsuario extends HttpServlet {
         String email = request.getParameter("Email");
         String password = request.getParameter("Password");
         
-        Systemout.println("Id: " + id + " Nombre: " + nombre + " Apellido: " + apellido + " Tipo de sangre: " + tipoDeSangre + " Cargo: " + cargo+ " Email: "+ email+ " Password: " + password);
+        System.out.println("Id: " + id + " Nombre: " + nombre + " Apellido: " + apellido + " Tipo de sangre: " + tipoDeSangre + " Cargo: " + cargo+ " Email: "+ email+ " Password: " + password);
         
         
         processRequest(request, response);

@@ -16,7 +16,7 @@
     <body>
          <body>
         <%
-            List<Usuario> usuarios=(List) request.getSession().getAttribute("listaEstudiante");
+            List<Usuario> usuarios=(List) request.getSession().getAttribute("listaUsuario");
             int cont=1;
             for(Usuario u:usuarios){   
         %>
