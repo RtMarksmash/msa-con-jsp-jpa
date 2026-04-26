@@ -4,17 +4,30 @@
  */
 package logica;
 
+import java.io.Serializable;
+import javax.persistence.Basic;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 /**
  *
  * @author PC
  */
-public class Usuario {
+@Entity
+public class Usuario implements Serializable {
+    @Id
     int id;
+    @Basic
     String nombre;
+    @Basic
     String apellido;
+    @Basic
     String tipoDeSangre;
+    @Basic
     int cargo;
+    @Basic
     String email;
+    @Basic
     String password;
 
     public Usuario(int id, String nombre, String apellido, String tipoDeSangre, int cargo, String email, String password) {
@@ -25,6 +38,10 @@ public class Usuario {
         this.cargo = cargo;
         this.email = email;
         this.password = password;
+    }
+    
+    public Usuario(){
+        
     }
 
     public int getId() {
