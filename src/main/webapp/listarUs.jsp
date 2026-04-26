@@ -22,14 +22,14 @@
         %>
         <h1>listar Usuarios</h1>
         
-        <p>usuario numero<%=cont%></p>
-        <p>Codigo<%=u.getId()  %></p>
-        <p>Nombre<%=u.getNombre()%></p>
-        <p>Apellido<%=u.getApellido()%></p>
-        <p>Tipo de sangre<%=u.getTipoDeSangre()%></p>
-        <p>Cargo<%=u.getCargo()%></p>
-        <p>Email<%=u.getEmail()%></p>
-        <p>Password<%=u.getPassword()%></p>
+        <p>usuario numero: <%=cont%></p>
+        <p>Id: <%=u.getId()  %></p>
+        <p>Nombre: <%=u.getNombre()%></p>
+        <p>Apellido: <%=u.getApellido()%></p>
+        <p>Tipo de sangre: <%=u.getTipoDeSangre()%></p>
+        <p>Cargo: <%=u.getCargo()%></p>
+        <p>Email: <%=u.getEmail()%></p>
+        <p>Password: <%=u.getPassword()%></p>
         
         <% cont=cont + 1;}   %>
         

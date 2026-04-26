@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import logica.Controladora;
 import logica.Usuario;
 
 /**
@@ -62,10 +63,10 @@ public class svUsuario extends HttpServlet {
             throws ServletException, IOException {
          List<Usuario> usuarios = new ArrayList();
         
-        usuarios.add(new Usuario(103,"carlo","hernandez","o",1,"dfc@dsfsd","1234"));
-        usuarios.add(new Usuario(104,"jorge","hernandez","o",1,"dfc@dsfsd","1234"));
-        usuarios.add(new Usuario(105,"luisa","hernandez","o",1,"dfc@dsfsd","1234"));
-        usuarios.add(new Usuario(106,"amy","hernandez","o",1,"dfc@dsfsd","1234"));
+         Controladora control = new Controladora();
+         
+         usuarios = control.consultarUsuarios();
+        
         
         HttpSession session = request.getSession();
         
@@ -94,7 +95,19 @@ public class svUsuario extends HttpServlet {
         String email = request.getParameter("Email");
         String password = request.getParameter("Password");
         
-        System.out.println("Id: " + id + " Nombre: " + nombre + " Apellido: " + apellido + " Tipo de sangre: " + tipoDeSangre + " Cargo: " + cargo+ " Email: "+ email+ " Password: " + password);
+      
+        Usuario u = new Usuario();
+        u.setId(id);
+        u.setNombre(nombre);
+        u.setApellido(apellido);
+        u.setTipoDeSangre(tipoDeSangre);
+        u.setCargo(cargo);
+        u.setEmail(email);
+        u.setPassword(password);
+        
+        Controladora control = new Controladora();
+        control.crearUsuario(u);
+        
         
         
         processRequest(request, response);
